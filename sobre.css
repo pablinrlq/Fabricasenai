@@ -1,0 +1,315 @@
+.about-container {
+    padding: 120px 50px 80px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.about-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.about-header h1 {
+    font-family: "Rubik Mono One", sans-serif;
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.about-header h1 span {
+    color: #3a9bff; 
+}
+
+.about-header p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.about-section {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 60px;
+    align-items: center;
+}
+
+.about-section.reverse {
+    flex-direction: row-reverse;
+}
+
+.about-image {
+    flex: 1;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.about-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(58, 155, 255, 0.2), transparent);
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.about-image:hover img {
+    transform: scale(1.05);
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h2 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #3a9bff; 
+}
+
+.about-text p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.tech-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.1));
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tech-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, rgba(58, 155, 255, 0.1), rgba(255, 255, 255, 0.05));
+    border-color: rgba(58, 155, 255, 0.3);
+}
+
+.tech-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #3a9bff, #0062cc);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 30px;
+    color: white;
+    box-shadow: 0 10px 20px rgba(58, 155, 255, 0.3);
+}
+
+.tech-card h3 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.tech-card p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.objectives-list {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.objectives-list li {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    padding-left: 30px;
+    position: relative;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.objectives-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #3a9bff; 
+    font-weight: bold;
+}
+
+.objectives-list li span {
+    color: #3a9bff; 
+    font-weight: 600;
+}
+
+.visit-section {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 60px;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(58, 155, 255, 0.1));
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.visit-info {
+    flex: 1;
+    padding: 40px;
+}
+
+.visit-info h2 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #3a9bff; 
+}
+
+.visit-info p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.visit-info ul {
+    margin-bottom: 30px;
+    padding-left: 20px;
+}
+
+.visit-info li {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.5;
+}
+
+.visit-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #3a9bff, #0062cc);
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(58, 155, 255, 0.3);
+}
+
+.visit-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(58, 155, 255, 0.4);
+}
+
+.visit-image {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), transparent);
+    z-index: 1;
+}
+
+.visit-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.visit-image:hover img {
+    transform: scale(1.05);
+}
+
+@media (max-width: 1200px) {
+    .tech-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .about-container {
+        padding: 100px 30px 60px;
+    }
+
+    .about-header h1 {
+        font-size: 3rem;
+    }
+
+    .about-section, 
+    .about-section.reverse,
+    .visit-section {
+        flex-direction: column;
+    }
+
+    .visit-image {
+        min-height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-container {
+        padding: 80px 20px 40px;
+    }
+
+    .about-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .about-header p {
+        font-size: 1rem;
+    }
+
+    .tech-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-text h2,
+    .visit-info h2 {
+        font-size: 1.8rem;
+    }
+
+    .about-text p,
+    .visit-info p {
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/bef417f226.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="transitions.css">
+    <title>SENAI - Painel Administrativo</title>
+</head>
+<body class="admin-dashboard-page">
+    <div class="admin-sidebar">
+        <div class="admin-logo">
+            <div class="logo">Fabrica 4.0</div>
+            <span>Admin</span>
+        </div>
+        
+        <nav class="admin-nav">
+            <a href="#" class="admin-nav-item active" data-view="appointments">
+                <i class="fas fa-calendar-alt"></i>
+                <span>Agendamentos</span>
+            </a>
+        </nav>
+        
+        <div class="admin-user">
+            <div class="admin-user-avatar">
+                <i class="fas fa-user"></i>
+            </div>
+            <div class="admin-user-info">
+                <p id="adminName">Administrador</p>
+                <button id="logoutBtn" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i> Sair
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="admin-main">
+        <div class="admin-header">
+            <div class="admin-header-title">
+                <h1>Painel Administrativo</h1>
+                <p id="currentDate">Carregando data...</p>
+            </div>
+            
+            <div class="admin-header-actions">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Buscar agendamentos...">
+                    <i class="fas fa-search"></i>
+                </div>
+                          
+                <a href="index.html" class="site-btn">
+                    <i class="fas fa-globe"></i>
+                    <span>Ver Site</span>
+                </a>
+            </div>
+        </div>
+        
+        <div class="admin-content">
+            <div id="appointmentsView" class="admin-view active">
+                <div class="admin-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Total de Agendamentos</h3>
+                            <p id="totalAppointments">0</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Agendamentos Hoje</h3>
+                            <p id="todayAppointments">0</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-user-clock"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Pendentes</h3>
+                            <p id="pendingAppointments">0</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Visitantes Este Mês</h3>
+                            <p id="monthlyVisitors">0</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="appointments-table-container">
+                    <table class="appointments-table">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Data</th>
+                                <th>Horário</th>
+                                <th>Participantes</th>
+                                <th>Status</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="appointmentsTableBody">
+                                <!-- os appointments vão ser gerados aqui o  -->
+                            <tr class="loading-row">
+                                <td colspan="6">
+                                    <div class="loading-spinner">
+                                        <i class="fas fa-spinner fa-spin"></i>
+                                        <span>Carregando agendamentos...</span>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>            
+
+<div id="appointmentModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Detalhes do Agendamento</h2>
+            <button class="close-modal">&times;</button>
+        </div>
+        <div class="modal-body">
+            <div class="appointment-details">
+                <div class="detail-group">
+                    <label>Nome:</label>
+                    <p id="modalNome"></p>
+                </div>
+                <div class="detail-group">
+                    <label>E-mail:</label>
+                    <p id="modalEmail"></p>
+                </div>
+                <div class="detail-group">
+                    <label>Telefone:</label>
+                    <p id="modalTelefone"></p>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-group">
+                        <label>Data:</label>
+                        <p id="modalData"></p>
+                    </div>
+                    <div class="detail-group">
+                        <label>Horário:</label>
+                        <p id="modalHorario"></p>
+                    </div>
+                </div>
+                <div class="detail-group">
+                    <label>Participantes:</label>
+                    <p id="modalParticipantes"></p>
+                </div>
+                <div class="detail-group">
+                    <label>Motivo da Visita:</label>
+                    <p id="modalMotivo"></p>
+                </div>
+                <div class="detail-group">
+                    <label>Status:</label>
+                    <select id="modalStatus">
+                        <option value="pendente">Pendente</option>
+                        <option value="confirmado">Confirmado</option>
+                        <option value="cancelado">Cancelado</option>
+                    </select>
+                </div>
+                <div class="detail-group">
+                    <label>Observações:</label>
+                    <textarea id="modalObservacoes" rows="3"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button id="deleteAppointmentBtn" class="delete-btn">Excluir</button>
+            <button id="saveAppointmentBtn" class="save-btn">Salvar Alterações</button>
+        </div>
+    </div>
+</div>
+
+    <div id="addAdminModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Adicionar Administrador</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="addAdminForm">
+                    <div class="form-group">
+                        <label for="adminName">Nome</label>
+                        <input type="text" id="newAdminName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="adminEmail">E-mail</label>
+                        <input type="email" id="newAdminEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="adminPassword">Senha</label>
+                        <input type="password" id="newAdminPassword" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="adminRole">Função</label>
+                        <select id="newAdminRole">
+                            <option value="admin">Administrador</option>
+                            <option value="viewer">Visualizador</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button id="cancelAddAdminBtn" class="cancel-btn">Cancelar</button>
+                <button id="confirmAddAdminBtn" class="save-btn">Adicionar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
+    <script src="firebase-config.js"></script>
+    <script src="script.js"></script>
+    <script src="admin-dashboard.js"></script>
+    <script src="page-transitions.js"></script>
+</body>
+</html>

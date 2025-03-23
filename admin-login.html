@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/bef417f226.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="transitions.css">
+    <link rel="stylesheet" href="admin-login.css">
+    <title>SENAI - Acesso Administrativo</title>
+</head>
+<body class="admin-page">
+    <div class="admin-container">
+        <div class="admin-login-card">
+            <div class="admin-login-header">
+                <div class="logo-container">
+        
+                </div>
+                <h1>Acesso Administrativo</h1>
+                <p>Faça login para acessar o painel de agendamentos</p>
+            </div>
+            
+            <form id="adminLoginForm" class="admin-login-form">
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="email" name="email" placeholder="Seu e-mail administrativo" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Senha</label>
+                    <div class="input-with-icon password-input">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="password" name="password" placeholder="Sua senha" required>
+                        <button type="button" id="togglePassword" class="toggle-password">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+                
+   
+                <div class="form-group">
+                    <button type="submit" class="login-btn">
+                        <span>Entrar</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+                
+                <div id="loginError" class="login-error">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <p>E-mail ou senha incorretos. Tente novamente.</p>
+                </div>
+            </form>
+            
+            <div class="admin-login-footer">
+                <a href="agendamento.html">
+                    <i class="fas fa-arrow-left"></i>
+                    Voltar para Agendamentos
+                </a>
+            </div>
+        </div>
+    </div>
+
+ 
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
+    <script src="firebase-config.js"></script>
+    <script src="admin-login.js"></script>
+    <script src="page-transitions.js"></script>
+</body>
+</html>

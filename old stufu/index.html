@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next/21.6.7/i18next.min.js"></script>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <title>Visitante - Fábrica 4.0</title>
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <img src="logo.png" alt="Logo da Fábrica 4.0" />
+        <nav>
+          <ul>
+            <li><a href="mapa.html">Mapa</a></li>
+            <li><a href="tour.html">Tour Virtual</a></li>
+            <li><a href="contato.html">Contato</a></li>
+          </ul>
+          <select id="language-selector">
+            <option value="pt">Português</option>
+            <option value="en">English</option>
+            <option value="es">Español</option>
+          </select>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero-section">
+        <div class="container">
+          <h1>FABRICA 4.0</h1>
+          <h2>BEM-VINDO</h2>
+        </div>
+        <div class="chathelp" id="chat-toggle">
+          <i class="fa-solid fa-comments"></i>
+        </div>
+      </section>
+
+      <div id="chatbot-container" class="hidden">
+        <div class="chatbot-header">
+          <h3>Assistente Virtual</h3>
+          <span class="close-btn" id="close-chat">&times;</span>
+        </div>
+        <div class="chatbot-messages" id="chat-messages">
+          <div class="message assistant">Olá! Sou o assistente SenAI da Fábrica 4.0. Como posso ajudar você hoje?</div>
+        </div>
+        <div class="chatbot-input">
+          <input type="text" id="user-input" placeholder="Digite sua pergunta..." autocomplete="off" />
+          <button id="send-btn">Enviar</button>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>© 2024 Fábrica 4.0 SENAI - Todos os direitos reservados.</p>
+    </footer>
+  </body>
+</html>

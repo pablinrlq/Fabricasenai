@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/bef417f226.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="transitions.css">
+    <link rel="stylesheet" href="agendamento.css">
+    <title>SENAI - Agendamento de Visitas</title>
+</head>
+<body class="agendamento-page">
+    <div class="navbar">
+        <div class="logo">SENAI</div>
+        <div class="nav-links">
+            <a href="index.html" class="nav-link">HOME</a> 
+            <a href="mapa.html" class="nav-link">MAPA</a> 
+            <a href="agendamento.html" class="nav-link">AGENDAMENTO</a> 
+            <a href="sobre.html" class="nav-link">SOBRE</a>
+        </div>
+        <div class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </div>
+    
+    <div class="mobile-menu">
+        <a href="index.html" class="nav-link">HOME</a>
+        <a href="mapa.html" class="nav-link">MAPA</a> 
+        <a href="agendamento.html" class="nav-link">AGENDAMENTO</a> 
+        <a href="sobre.html" class="nav-link">SOBRE</a>
+    </div>
+    
+    <div class="agendamento-container">
+        <div class="agendamento-header">
+            <h1>AGENDE SUA VISITA</h1>
+            <p>Preencha o formulário abaixo para agendar uma visita à Fábrica 4.0</p>
+        </div>
+        
+        <div class="agendamento-content">
+            <div class="agendamento-form-container">
+                <form id="agendamentoForm" class="agendamento-form">
+                    <div class="form-group">
+                        <label for="nome">Nome Completo</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="telefone">Telefone</label>
+                        <input type="tel" id="telefone" name="telefone" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="data">Data da Visita</label>
+                            <input type="date" id="data" name="data" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="horario">Horário</label>
+                            <select id="horario" name="horario" required>
+                                <option value="">Selecione um horário</option>
+                                <option value="09:00">09:00</option>
+                                <option value="10:00">10:00</option>
+                                <option value="11:00">11:00</option>
+                                <option value="14:00">14:00</option>
+                                <option value="15:00">15:00</option>
+                                <option value="16:00">16:00</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="participantes">Número de Participantes</label>
+                        <input type="number" id="participantes" name="participantes" min="1" max="20" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="motivo">Motivo da Visita</label>
+                        <textarea id="motivo" name="motivo" rows="4" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <button type="submit" class="submit-btn">Agendar Visita</button>
+                    </div>
+                </form>
+                
+                <div id="successMessage" class="success-message">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Agendamento Realizado com Sucesso!</h3>
+                    <p>Sua solicitação de visita foi recebida. Entraremos em contato para confirmar seu agendamento.</p>
+                    <button id="newAppointmentBtn" class="new-appointment-btn">Fazer Novo Agendamento</button>
+                </div>
+            </div>
+            
+            <div class="agendamento-info">
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                    <h3>Informações Importantes</h3>
+                    <ul>
+                        <li>As visitas devem ser agendadas com pelo menos 3 dias de antecedência</li>
+                        <li>Grupos de até 20 pessoas por visita</li>
+                        <li>Duração média da visita: 1 hora</li>
+                        <li>Uso de calçado fechado é obrigatório</li>
+                        <li>Menores de 12 anos devem estar acompanhados por um responsável</li>
+                    </ul>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Localização</h3>
+                    <p>Av. Tecnologia, 1000 - Centro Industrial</p>
+                    <p>São Paulo - SP</p>
+                    <a href="#" class="map-link">Ver no Mapa <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="admin-login-link">
+                    <a href="admin-login.html">Acesso Administrativo</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <img src="img/mechanical arm.png" alt="mechanical arm"> PABLO PROJETOS
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
+    <script src="script.js"></script>
+    <script src="agendamento.js"></script>
+    <script src="page-transitions.js"></script>
+</body>
+</html>
