@@ -25,7 +25,7 @@ Este projeto foi desenvolvido para o Centro de Aprendizagem da Indústria 4.0 do
 ## Como Rodar o Projeto
 1. Clone este repositório:
    ```bash
-   git clone https://github.com/seu-usuario/senai-agendamentos.git
+   https://github.com/pablinrlq/Fabricasenai.git
    ```
 2. Abra o projeto em um editor de código (VS Code recomendado).
 3. Configure seu **Firebase** e substitua as credenciais no arquivo de configuração.
