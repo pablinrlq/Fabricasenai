@@ -32,7 +32,7 @@ Este projeto foi desenvolvido para o Centro de Aprendizagem da Indústria 4.0 do
 4. Abra o arquivo `index.html` em um navegador.
 
 ## Contato
-Para mais informações ou sugestões, entre em contato pelo email: **seuemail@exemplo.com**
+Para mais informações ou sugestões, entre em contato pelo email: **pablinhomoi2@gmail.com**
 
 ---
 Esse README dá uma visão geral do projeto e pode ser melhorado conforme o avanço do desenvolvimento! 🚀
