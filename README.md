@@ -12,7 +12,7 @@ Este projeto foi desenvolvido para o Centro de Aprendizagem da Indústria 4.0 do
 
 ## Tecnologias Utilizadas
 - **Frontend**: HTML, CSS, JavaScript
-- **Backend**: Firebase Firestore para armazenamento de dados
+- **Backend**: JavaScript e Firebase Firestore para armazenamento de dados
 - **Autenticação**: Firebase Authentication (caso implementado)
 - **IA**: Chatbot SenAI (em desenvolvimento)
 
